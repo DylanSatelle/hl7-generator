@@ -1,5 +1,6 @@
 composer install --optimize-autoloader --no-dev
 composer require fakerphp/faker
+composer require laravel/socialite
 npm install
 npm run build
 chmod -R 775 storage bootstrap/cache

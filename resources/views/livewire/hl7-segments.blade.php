@@ -8,32 +8,34 @@
 <div class="flex-1 flex flex-col gap-4 bg-gray-300 p-4 rounded-lg overflow-auto">
     @foreach($segments as $segment)
         @unless(isset($selectedSegments[$segment['code']]))
-            <div class="bg-white rounded-lg shadow-md p-4 flex flex-col gap-2 relative">
+           <div class="bg-white rounded-lg shadow-md relative overflow-visible p-4">
 
     <!-- + Button -->
-     <div class = "absolute -top-1 -left-2 w-8 h-8 bg-green-500 text-white rounded-full font-bold hover:bg-green-600 flex items-center shadow-lg z-10">
     <button wire:click="selectSegment('{{ $segment['code'] }}')"
-        class="bg-green-500 text-white rounded-full font-bold hover:bg-green-600 flex items-center justify-center shadow-lg z-10">
+        class="absolute top-2 right-2 text-gray-500 font-bold hover:text-gray-700">
         +
     </button>
-</div>
 
-    <!-- Code -->
-    <div class="font-bold text-xl">
-        {{ $segment['code'] }}
+    <!-- Text wrapper -->
+    <div class="flex flex-col gap-2">
+        <!-- Code -->
+        <div class="font-bold text-xl">
+            {{ $segment['code'] }}
+        </div>
+
+        <!-- Title -->
+        <p class="text-gray-700">
+            {{ $segment['title'] }}
+        </p>
+
+        <!-- Description -->
+        <p class="text-gray-500 text-sm">
+            {{ $segment['description'] }}
+        </p>
     </div>
 
-    <!-- Title -->
-    <p class="text-gray-700">
-        {{ $segment['title'] }}
-    </p>
-
-    <!-- Description -->
-    <p class="text-gray-500 text-sm">
-        {{ $segment['description'] }}
-    </p>
-
 </div>
+
         @endunless
     @endforeach
 

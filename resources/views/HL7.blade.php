@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="p-6">
-<livewire:hl7-segments :segments="$segments" />
+        @livewire(\App\Livewire\Hl7Segments::class)
     </div>
 @endsection
 

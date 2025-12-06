@@ -22,6 +22,16 @@
                class="w-full text-center px-6 py-4 bg-purple-600 text-black font-bold text-xl rounded-lg shadow-lg hover:bg-purple-700 transition">
                 Generate Mass HL7 Messages
             </a>
+
+            <a href="{{ route('scenario') }}" 
+               class="w-full text-center px-6 py-4 bg-purple-600 text-black font-bold text-xl rounded-lg shadow-lg hover:bg-purple-700 transition">
+                Scenarios
+            </a>
+
+            <a href="{{ route('docs') }}" 
+               class="w-full text-center px-6 py-4 bg-purple-600 text-black font-bold text-xl rounded-lg shadow-lg hover:bg-purple-700 transition">
+                Documentation
+            </a>
         </div>
     </div>
 </div>

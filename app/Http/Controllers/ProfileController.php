@@ -8,18 +8,31 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\HL7Segment;
+
 
 class ProfileController extends Controller
 {
     /**
      * Display the user's profile form.
      */
-    public function edit(Request $request): View
-    {
-        return view('profile.edit', [
-            'user' => $request->user(),
-        ]);
-    }
+    /**
+ * Display the user's profile form.
+ */
+public function edit(Request $request): View
+{
+    $user = $request->user();
+
+    // Fetch the last 10 messages for this user, paginated
+    $messages = HL7Segment::where('user_id', $user->id)
+        ->latest()
+        ->paginate(10);
+
+    return view('profile.edit', [
+        'user' => $user,
+        'messages' => $messages, // Pass messages to view
+    ]);
+}
 
     /**
      * Update the user's profile information.

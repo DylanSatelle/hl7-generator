@@ -8,14 +8,13 @@
 <div class="flex-1 flex flex-col gap-4 bg-gray-300 p-4 rounded-lg overflow-auto">
     @foreach($segments as $segment)
         @unless(isset($selectedSegments[$segment['code']]))
-            <div class="bg-white rounded-lg shadow-md relative overflow-visible">
+            <div class="bg-white rounded-lg shadow-md relative overflow-visible p-4 flex flex-col gap-2">
 
     <!-- + Button -->
     <button wire:click="selectSegment('{{ $segment['code'] }}')"
         class="absolute top-2 right-2 text-gray-500 font-bold hover:text-gray-700">
         +
     </button>
-
 
     <!-- Code -->
     <div class="font-bold text-xl">

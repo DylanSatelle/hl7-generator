@@ -32,8 +32,9 @@
             <!-- Page Content -->
   <main>
     @yield('content')
+    @livewireScripts
 </main>
         </div>
-        @livewireScripts
+        
     </body>
 </html>

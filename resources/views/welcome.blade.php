@@ -105,7 +105,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10 w-full">
         <div class="flex flex-col items-center">
             <div class="w-full h-[500px] bg-white rounded-xl shadow-2xl overflow-hidden">
-                <img src="{{ asset('storage/app/public/pics/select_segment.png') }}" class="w-full h-full object-cover">
+                <img src="{{ asset('storage/public/pics/select_segment.png') }}" class="w-full h-full object-cover">
             </div>
             <p class="text-white text-lg mt-4 font-medium text-center">
                 Find your segment, click +
@@ -114,7 +114,7 @@
 
         <div class="flex flex-col items-center">
             <div class="w-full h-[500px] bg-white rounded-xl shadow-2xl overflow-hidden">
-                <img src="{{ asset('storage/app/public/pics/input_data.png') }}" class="w-full h-full object-cover">
+                <img src="{{ asset('storage/public/pics/input_data.png') }}" class="w-full h-full object-cover">
             </div>
             <p class="text-white text-lg mt-4 font-medium text-center">
                 Add your details in
@@ -123,7 +123,7 @@
 
         <div class="flex flex-col items-center">
             <div class="w-full h-[500px] bg-white rounded-xl shadow-2xl overflow-hidden">
-                <img src="{{ asset('storage/app/public/pics/click_genhl7.png') }}" class="w-full h-full object-cover">
+                <img src="{{ asset('storage/public/pics/click_genhl7.png') }}" class="w-full h-full object-cover">
             </div>
             <p class="text-white text-lg mt-4 font-medium text-center">
                 Click generate
@@ -143,7 +143,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10 w-full">
         <div class="flex flex-col items-center">
             <div class="w-full h-[500px] bg-white rounded-xl shadow-2xl overflow-hidden">
-                <img src="{{ asset('storage/app/public/pics/mass1.png') }}" class="w-full h-full object-cover">
+                <img src="{{ asset('storage/public/pics/mass1.png') }}" class="w-full h-full object-cover">
             </div>
             <p class="text-white text-lg mt-4 font-medium text-center">
                 Enter the number of fake messages you want to generate
@@ -152,7 +152,7 @@
 
         <div class="flex flex-col items-center">
             <div class="w-full h-[500px] bg-white rounded-xl shadow-2xl overflow-hidden">
-                <img src="{{ asset('storage/app/public/pics/mass2.png') }}" class="w-full h-full object-cover">
+                <img src="{{ asset('storage/public/pics/mass2.png') }}" class="w-full h-full object-cover">
             </div>
             <p class="text-white text-lg mt-4 font-medium text-center">
                 Click generate to see all messages
@@ -161,7 +161,7 @@
 
         <div class="flex flex-col items-center">
             <div class="w-full h-[500px] bg-white rounded-xl shadow-2xl overflow-hidden">
-                <img src="{{ asset('storage/app/public/pics/mass3.png') }}" class="w-full h-full object-cover">
+                <img src="{{ asset('storage/public/pics/mass3.png') }}" class="w-full h-full object-cover">
             </div>
             <p class="text-white text-lg mt-4 font-medium text-center">
                 Export all messages as a single <span class="font-bold">.zip</span> of <span class="font-bold">.HL7</span> files

@@ -2,7 +2,7 @@
     <div class="flex flex-col md:flex-row h-auto md:h-screen gap-4 p-4">
 
         {{-- Left Column --}}
-        <div class="flex-1 flex flex-col gap-4 bg-gray-300 p-4 rounded-lg overflow-auto">
+        <div class="flex-1 flex flex-col gap-4 bg-gray-300 p-4 rounded-lg overflow-auto order-1 md:order-1">
             @foreach($segments as $segment)
                 @unless(isset($selectedSegments[$segment['code']]))
                     <div class="bg-white rounded-lg shadow-md relative overflow-visible">
@@ -25,42 +25,10 @@
                     </div>
                 @endunless
             @endforeach
-
-            {{-- Action Buttons --}}
-            <div class="flex flex-col sm:flex-row flex-wrap gap-2 mt-4">
-                <button wire:click="generateHL7"
-                    class="bg-green-500 text-white px-4 sm:px-6 py-2 rounded hover:bg-green-600 flex-1 sm:flex-auto text-center">
-                    Generate HL7
-                </button>
-
-                <button wire:click="generateFakeMessage"
-                    class="bg-green-500 text-white px-4 sm:px-6 py-2 rounded hover:bg-green-600 flex-1 sm:flex-auto text-center">
-                    Generate Fake Message
-                </button>
-
-                <button wire:click="clearData"
-                    class="bg-green-500 text-white px-4 sm:px-6 py-2 rounded hover:bg-green-600 flex-1 sm:flex-auto text-center">
-                    Clear Input
-                </button>
-            </div>
-
-            {{-- HL7 Output Card --}}
-            @if($hl7Message || $fakeMessage)
-                <div class="relative bg-white rounded-lg shadow-md mt-4 p-4 overflow-x-auto">
-                    <button wire:click="downloadHL7"
-                        class="bg-green-500 text-white px-4 sm:px-6 py-2 rounded hover:bg-green-600 mb-2">
-                        Save
-                    </button>
-
-                    <pre class="font-mono text-green-700 whitespace-pre-wrap break-words">
-{{ $fakeMessage ?: $hl7Message }}
-                    </pre>
-                </div>
-            @endif
         </div>
 
         {{-- Right Column --}}
-        <div class="flex-1 flex flex-col gap-4 bg-gray-300 p-4 rounded-lg overflow-auto">
+        <div class="flex-1 flex flex-col gap-4 bg-gray-300 p-4 rounded-lg overflow-auto order-2 md:order-2">
             @forelse($selectedSegments as $selected)
                 <div class="bg-white rounded-lg shadow-md p-4 flex flex-col gap-2">
 
@@ -111,6 +79,68 @@
                     <p class="text-gray-400 italic">Add Segment...</p>
                 </div>
             @endforelse
+
+            {{-- Action Buttons (mobile only) --}}
+            <div class="flex flex-col gap-2 mt-4 md:hidden">
+                <button wire:click="generateHL7"
+                    class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full text-center">
+                    Generate HL7
+                </button>
+
+                <button wire:click="generateFakeMessage"
+                    class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full text-center">
+                    Generate Fake Message
+                </button>
+
+                <button wire:click="clearData"
+                    class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full text-center">
+                    Clear Input
+                </button>
+
+                {{-- HL7 Output Card --}}
+                @if($hl7Message || $fakeMessage)
+                    <div class="relative bg-white rounded-lg shadow-md mt-4 p-4 overflow-x-auto">
+                        <button wire:click="downloadHL7"
+                            class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mb-2 w-full text-center">
+                            Save
+                        </button>
+                        <pre class="font-mono text-green-700 whitespace-pre-wrap break-words">
+{{ $fakeMessage ?: $hl7Message }}
+                        </pre>
+                    </div>
+                @endif
+            </div>
+
+        </div>
+
+        {{-- Action Buttons (desktop only) --}}
+        <div class="hidden md:flex flex-col gap-2 mt-4 w-1/4">
+            <button wire:click="generateHL7"
+                class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full text-center">
+                Generate HL7
+            </button>
+
+            <button wire:click="generateFakeMessage"
+                class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full text-center">
+                Generate Fake Message
+            </button>
+
+            <button wire:click="clearData"
+                class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full text-center">
+                Clear Input
+            </button>
+
+            @if($hl7Message || $fakeMessage)
+                <div class="relative bg-white rounded-lg shadow-md mt-4 p-4 overflow-x-auto">
+                    <button wire:click="downloadHL7"
+                        class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mb-2 w-full text-center">
+                        Save
+                    </button>
+                    <pre class="font-mono text-green-700 whitespace-pre-wrap break-words">
+{{ $fakeMessage ?: $hl7Message }}
+                    </pre>
+                </div>
+            @endif
         </div>
 
     </div>

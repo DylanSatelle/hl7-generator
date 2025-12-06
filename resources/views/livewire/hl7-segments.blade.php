@@ -11,10 +11,12 @@
             <div class="bg-white rounded-lg shadow-md p-4 flex flex-col gap-2 relative">
 
     <!-- + Button -->
+     <div class = "absolute -top-1 -left-2 w-8 h-8 bg-green-500 text-white rounded-full font-bold hover:bg-green-600 flex items-center shadow-lg z-10">
     <button wire:click="selectSegment('{{ $segment['code'] }}')"
-        class="absolute -top-2 -right-2 w-8 h-8 bg-green-500 text-white rounded-full font-bold hover:bg-green-600 flex items-center justify-center shadow-lg z-10">
+        class="bg-green-500 text-white rounded-full font-bold hover:bg-green-600 flex items-center justify-center shadow-lg z-10">
         +
     </button>
+</div>
 
     <!-- Code -->
     <div class="font-bold text-xl">

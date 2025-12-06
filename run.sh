@@ -1,4 +1,5 @@
 composer install --optimize-autoloader --no-dev
+composer require fakerphp/faker
 npm install
 npm run build
 chmod -R 775 storage bootstrap/cache

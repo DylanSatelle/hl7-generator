@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\MassGenerateHL7;
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/HL7', function () {
     return view('HL7');

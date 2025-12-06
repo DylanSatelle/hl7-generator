@@ -30,6 +30,9 @@
                     <x-nav-link :href="route('docs')" :active="request()->routeIs('docs')">
     {{ __('Documentation') }}
 </x-nav-link>
+                    <x-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')">
+    {{ __('Landing Page') }}
+</x-nav-link>
             </div>
 
             <!-- Settings Dropdown -->

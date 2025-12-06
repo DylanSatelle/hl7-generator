@@ -34,11 +34,11 @@
         </p>
     </div>
 
-</div>
+
 
         @endunless
     @endforeach
-
+</div>
     {{-- Generate button --}}
 
     <button wire:click="generateHL7"

@@ -15,6 +15,10 @@ Route::get('/scenario', function () {
     return view('hl7-scenarios');
 })->name('scenario');
 
+Route::get('/docs', function () {
+    return view('Documentation');
+})->name('docs');
+
 Route::middleware(['auth', 'verified'])
      ->get('/mass-generate-hl7', function () {
          return view('mass-generate-hl7');

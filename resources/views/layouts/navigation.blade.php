@@ -26,6 +26,10 @@
                     <x-nav-link :href="route('scenario')" :active="request()->routeIs('scenario')">
     {{ __('Scenarios') }}
 </x-nav-link>
+
+                    <x-nav-link :href="route('docs')" :active="request()->routeIs('docs')">
+    {{ __('Documentation') }}
+</x-nav-link>
             </div>
 
             <!-- Settings Dropdown -->

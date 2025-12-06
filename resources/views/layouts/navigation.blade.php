@@ -22,6 +22,10 @@
                 <x-nav-link :href="route('mass-generate-hl7')" :active="request()->routeIs('mass-generate-hl7')">
     {{ __('Mass Generate') }}
 </x-nav-link>
+
+                    <x-nav-link :href="route('scenario')" :active="request()->routeIs('scenario')">
+    {{ __('Scenarios') }}
+</x-nav-link>
             </div>
 
             <!-- Settings Dropdown -->

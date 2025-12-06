@@ -11,6 +11,10 @@ Route::get('/HL7', function () {
     return view('HL7');
 })->name('HL7');
 
+Route::get('/scenario', function () {
+    return view('hl7-scenarios');
+})->name('scenario');
+
 Route::middleware(['auth', 'verified'])
      ->get('/mass-generate-hl7', function () {
          return view('mass-generate-hl7');

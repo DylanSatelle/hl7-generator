@@ -3,7 +3,8 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-
+use App\Models\HL7Segment;
+use Illuminate\Support\Facades\Auth;
 class Hl7Segments extends Component
 {
     public $segments = [];
@@ -231,6 +232,10 @@ public function generateHL7()
     }
 
     $this->hl7Message = implode("\n", $segments); // newline for proper HL7 display
+    HL7Segment::create([
+            'user_id' => Auth::id(),
+            'message' => $this->hl7Message,
+        ]);
 }
 
 public function downloadHL7()

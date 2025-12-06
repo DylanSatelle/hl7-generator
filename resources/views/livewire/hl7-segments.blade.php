@@ -12,7 +12,7 @@
 
     <!-- + Button -->
     <button wire:click="selectSegment('{{ $segment['code'] }}')"
-        class="absolute top-2 right-2 text-gray-500 font-bold hover:text-gray-700">
+        class="absolute top-2 right-2 z-10 text-gray-500 font-bold hover:text-gray-700 bg-white rounded-full w-6 h-6 flex items-center justify-center">
         +
     </button>
 

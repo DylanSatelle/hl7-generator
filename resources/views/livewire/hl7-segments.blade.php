@@ -8,22 +8,30 @@
 <div class="flex-1 flex flex-col gap-4 bg-gray-300 p-4 rounded-lg overflow-auto">
     @foreach($segments as $segment)
         @unless(isset($selectedSegments[$segment['code']]))
-            <div class="bg-white rounded-lg shadow-md relative overflow-hidden">
-                
-                <!-- + Button -->
-                <button wire:click="selectSegment('{{ $segment['code'] }}')" 
-                        style="position: absolute; top: 8px; right: 8px; color: #6B7280; font-weight: bold; background: transparent; border: none; cursor: pointer;">
-                    +
-                </button>
+            <div class="bg-white rounded-lg shadow-md relative overflow-visible p-4 flex flex-col gap-2">
 
-                <!-- Card content -->
-                <div style="padding: 16px; display: flex; flex-direction: column; gap: 8px;">
-                    <div style="font-weight: bold; font-size: 1.25rem;">{{ $segment['code'] }}</div>
-                    <p style="color: #374151;">{{ $segment['title'] }}</p>
-                    <p style="color: #6B7280; font-size: 0.875rem;">{{ $segment['description'] }}</p>
-                </div>
+    <!-- + Button -->
+    <button wire:click="selectSegment('{{ $segment['code'] }}')"
+        class="absolute top-2 right-2 text-gray-500 font-bold hover:text-gray-700">
+        +
+    </button>
 
-            </div>
+    <!-- Code -->
+    <div class="font-bold text-xl">
+        {{ $segment['code'] }}
+    </div>
+
+    <!-- Title -->
+    <p class="text-gray-700">
+        {{ $segment['title'] }}
+    </p>
+
+    <!-- Description -->
+    <p class="text-gray-500 text-sm">
+        {{ $segment['description'] }}
+    </p>
+
+</div>
         @endunless
     @endforeach
 
